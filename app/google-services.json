@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "288704871645",
+    "project_id": "takeorders-94d6b",
+    "storage_bucket": "takeorders-94d6b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288704871645:android:28771e7abb908396596f34",
+        "android_client_info": {
+          "package_name": "com.gana.takeOrders"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoSjc1u3HUAbYG4I0-259XkYOu7_PTJ0o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288704871645:android:9ac685f82c7c25f0596f34",
+        "android_client_info": {
+          "package_name": "com.gana.workspace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoSjc1u3HUAbYG4I0-259XkYOu7_PTJ0o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

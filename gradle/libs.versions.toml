@@ -1,17 +1,44 @@
 [versions]
 agp = "8.1.4"
-kotlin = "1.8.0"
+commonsCollections4 = "4.4"
+commonsLang3 = "3.12.0"
+commonsMath3 = "3.6.1"
+commonsText = "1.10.0"
+firebaseBom = "33.16.0"
+glide = "4.16.0"
+kotlin = "2.1.20"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.1"
+lifecycleViewmodelKtx = "2.9.1"
 material = "1.12.0"
 activity = "1.9.2"
 constraintlayout = "2.1.4"
+googleGmsGoogleServices = "4.4.3"
+firebaseAuth = "23.2.1"
+places = "4.3.1"
+retrofit = "2.11.0"
+roomCompiler = "2.7.2"
+rxandroid = "2.1.0"
+rxbindingMaterial = "4.0.0"
+rxjava = "2.2.21"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomCompiler" }
+androidx-room-rxjava2 = { module = "androidx.room:room-rxjava2", version.ref = "roomCompiler" }
+commons-collections4 = { module = "org.apache.commons:commons-collections4", version.ref = "commonsCollections4" }
+commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commonsLang3" }
+commons-math3 = { module = "org.apache.commons:commons-math3", version.ref = "commonsMath3" }
+commons-text = { module = "org.apache.commons:commons-text", version.ref = "commonsText" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "retrofit" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -19,8 +46,16 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+places = { module = "com.google.android.libraries.places:places", version.ref = "places" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+rxandroid = { module = "io.reactivex.rxjava2:rxandroid", version.ref = "rxandroid" }
+rxbinding = { module = "com.jakewharton.rxbinding4:rxbinding", version.ref = "rxbindingMaterial" }
+rxbinding-material = { module = "com.jakewharton.rxbinding4:rxbinding-material", version.ref = "rxbindingMaterial" }
+rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjava" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 

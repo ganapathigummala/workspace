@@ -1,5 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Base Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Grays -->
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_200">#EEEEEE</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="grey_400">#BDBDBD</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_600">#757575</color>
+    <color name="grey_700">#616161</color>
+    <color name="grey_800">#424242</color>
+    <color name="grey_900">#212121</color>
+
+    <!-- Primary Brand Colors -->
+    <color name="primary_blue">#1976D2</color>
+    <color name="primary_dark_blue">#0D47A1</color>
+    <color name="primary_light_blue">#BBDEFB</color>
+
+    <!-- Accent / Secondary Colors -->
+    <color name="accent_pink">#E91E63</color>
+    <color name="accent_purple">#9C27B0</color>
+    <color name="accent_deep_purple">#673AB7</color>
+    <color name="accent_indigo">#3F51B5</color>
+    <color name="accent_cyan">#00BCD4</color>
+    <color name="accent_teal">#009688</color>
+    <color name="accent_green">#4CAF50</color>
+    <color name="accent_light_green">#8BC34A</color>
+    <color name="accent_lime">#CDDC39</color>
+    <color name="accent_yellow">#FFEB3B</color>
+    <color name="accent_amber">#FFC107</color>
+    <color name="accent_orange">#FF9800</color>
+    <color name="accent_deep_orange">#FF5722</color>
+    <color name="accent_brown">#795548</color>
+    <color name="accent_blue_grey">#607D8B</color>
+
+    <!-- Alerts / States -->
+    <color name="success_green">#45C707</color>
+    <color name="warning_yellow">#FFC107</color>
+    <color name="error_red">#F44336</color>
+    <color name="info_blue">#2196F3</color>
+
+    <!-- UI Themed Colors -->
+    <color name="divider_color">#BDBDBD</color>
+    <color name="background_color">#FAFAFA</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="toolbar_color">#3F51B5</color>
+    <color name="button_color">#FF5722</color>
+    <color name="hint_color">#9E9E9E</color>
+
+    <!-- Functional Colors -->
+    <color name="pettyExpenses">#FCCA46</color>
+    <color name="salesInvoice">#A1C181</color>
+    <color name="light_grey_2">#D9D9D9</color>
+    <color name="light_grey_3">#EDEDED</color>
+    <color name="ghost_white">#ECEFF8</color>
+    <color name="royal_blue">#476AD3</color>
+    <color name="indigo_dye">#043A62</color>
+    <color name="freight_yellow">#FCC607</color>
+    <color name="cash_purple">#9B00FA</color>
+    <color name="expenses_orange">#F13A00</color>
+    <color name="accounts_blue">#0085FF</color>
+    <color name="coolie_brown">#AA6600</color>
+    <color name="returns_red">#C23E06</color>
+
+    <!-- Unique/Extra Colors -->
+    <color name="sunflower">#FFC312</color>
+    <color name="energizing_orange">#F79F1F</color>
+    <color name="lime_green">#A3CB38</color>
+    <color name="sky_blue">#12CBC4</color>
+    <color name="fresh_aqua">#1289A7</color>
+    <color name="rich_purple">#D980FA</color>
+    <color name="calm_pink">#FDA7DF</color>
+    <color name="bright_red">#ED4C67</color>
+    <color name="deep_sea_blue">#0652DD</color>
+    <color name="warm_grey">#A4B0BD</color>
+    <color name="cool_grey">#747D8C</color>
+    <color name="ocean_blue">#1B9CFC</color>
+    <color name="melon_pink">#F8A5C2</color>
+    <color name="grape_purple">#8854D0</color>
+    <color name="forest_green">#20BF6B</color>
+    <color name="bright_yellow">#F7B731</color>
+    <color name="light_salmon">#FFA07A</color>
+    <color name="slate_blue">#6A5ACD</color>
+    <color name="turquoise">#40E0D0</color>
+    <color name="peach">#FFDAB9</color>
+    <color name="mint">#98FF98</color>
+    <color name="charcoal">#36454F</color>
+    <color name="burgundy">#800020</color>
+    <color name="cobalt">#0047AB</color>
+    <color name="crimson">#DC143C</color>
+    <color name="eggplant">#614051</color>
+    <color name="mustard">#FFDB58</color>
+    <color name="olive">#808000</color>
 </resources>

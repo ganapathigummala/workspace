@@ -1,6 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    // Add the Google services Gradle plugin
+
+    id("com.google.gms.google-services")
+
 }
 
 android {
@@ -31,6 +35,7 @@ android {
         jvmTarget = '1.8'
     }
     dataBinding{
+        //noinspection DataBindingWithoutKapt
         enabled = true
     }
 }
@@ -48,42 +53,52 @@ dependencies {
     implementation libs.material
     implementation libs.androidx.activity
     implementation libs.androidx.constraintlayout
+    implementation libs.firebase.auth
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
 
     // retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-scalars:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation libs.retrofit
+    implementation libs.converter.scalars
+    implementation libs.converter.gson
 
     // apache utills
-    implementation 'org.apache.commons:commons-lang3:3.12.0'
-    implementation 'org.apache.commons:commons-collections4:4.4'
-    implementation 'org.apache.commons:commons-text:1.10.0'
-    implementation 'org.apache.commons:commons-math3:3.6.1'
+    implementation libs.commons.lang3
+    implementation libs.commons.collections4
+    implementation libs.commons.text
+    implementation libs.commons.math3
 
     // rx binding
-    implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
-    implementation 'com.jakewharton.rxbinding4:rxbinding-material:4.0.0'
+    implementation libs.rxbinding
+    implementation libs.rxbinding.material
 
     // Places and Maps SDKs
-    implementation 'com.google.android.libraries.places:places:3.5.0'
+    implementation libs.places
 
     // rxjava
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation libs.rxjava
+    implementation libs.rxandroid
 
     // room db
-    runtimeOnly 'androidx.room:room-runtime:2.6.1'
-    implementation 'androidx.room:room-rxjava2:2.6.1'
-    annotationProcessor 'androidx.room:room-compiler:2.6.1'
+    runtimeOnly libs.androidx.room.runtime
+    implementation libs.androidx.room.rxjava2
+    annotationProcessor libs.androidx.room.compiler
 
 
     // glide
-    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation libs.glide
 
     // viewmodel
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation libs.androidx.lifecycle.viewmodel.ktx
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+
+
+    // Import the Firebase BoM
+
+    implementation(platform(libs.firebase.bom))
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+    // https://firebase.google.com/docs/android/setup#available-libraries
+
 }
