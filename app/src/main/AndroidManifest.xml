@@ -13,19 +13,28 @@
         android:theme="@style/Theme.Workspace"
         tools:targetApi="31">
         <activity
-            android:name=".view.RegistrationActivity"
+            android:name=".view.java.RegistrationActivity"
             android:exported="false" />
         <activity
-            android:name=".view.LoginActivity"
+            android:name=".view.java.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".view.LoginActivityV2"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.RegisterActivityV2"
+            android:exported="false" >
+
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
         </activity>
 
         <meta-data

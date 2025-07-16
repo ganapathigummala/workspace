@@ -1,9 +1,7 @@
-package com.gana.workspace.view;
+package com.gana.workspace.view.java;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -23,8 +21,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.EmailAuthCredential;
-import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -68,7 +64,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     progressBar.setVisibility(View.GONE);
                                     Toast.makeText(RegistrationActivity.this, "Authentication successfull.", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(RegistrationActivity.this,LoginActivity.class);
+                                    Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
                                     setIntent(intent);
                                     finish();
                                 } else {

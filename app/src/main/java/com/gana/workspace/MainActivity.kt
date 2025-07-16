@@ -8,8 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import com.gana.workspace.databinding.ActivityMainBinding
-import com.gana.workspace.view.LoginActivity
-import com.gana.workspace.view.RegistrationActivity
+import com.gana.workspace.view.java.RegistrationActivity
 
 class MainActivity : AppCompatActivity() {
 
