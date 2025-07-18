@@ -33,6 +33,9 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/home"
                 android:visibility="visible"
+                android:clickable="true"
+                android:focusable="true"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/shops"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -47,6 +50,8 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/kitchen"
                 android:visibility="visible"
+                android:clickable="true"
+                android:focusable="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/likes"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -58,6 +63,9 @@
                 android:id="@+id/likes"
                 android:layout_width="40dp"
                 android:layout_height="42dp"
+                android:clickable="true"
+                android:focusable="true"
+
                 android:scaleType="fitXY"
                 android:src="@drawable/like_placeholder"
                 android:visibility="visible"
@@ -71,6 +79,9 @@
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/profile"
                 android:layout_width="40dp"
+                android:clickable="true"
+                android:focusable="true"
+
                 android:layout_height="40dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/profile"

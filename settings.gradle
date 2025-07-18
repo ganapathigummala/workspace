@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "workspace"
+rootProject.name = "My Orders"
 include ':app'

@@ -12,6 +12,6 @@ class LikesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.homefragment, container, false)
+        return inflater.inflate(R.layout.likesfragment, container, false)
     }
 }

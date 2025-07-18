@@ -2,18 +2,20 @@ package com.gana.workspace
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import com.gana.workspace.databinding.ActivityMainBinding
 import com.gana.workspace.view.fragments.HomeFragment
-import com.gana.workspace.view.fragments.ShopsFragment
 import com.gana.workspace.view.fragments.LikesFragment
 import com.gana.workspace.view.fragments.ProfileFragment
+import com.gana.workspace.view.fragments.ShopsFragment
 import com.gana.workspace.view.java.RegistrationActivity
-import org.apache.commons.text.StringSubstitutor.replace
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,23 +37,26 @@ class MainActivity : AppCompatActivity() {
         binding.home.setOnClickListener {
             loadFragment(HomeFragment())
         }
+
         binding.shops.setOnClickListener {
+
             loadFragment(ShopsFragment())
         }
         binding.likes.setOnClickListener {
+
             loadFragment(LikesFragment())
         }
         binding.profile.setOnClickListener {
+
             loadFragment(ProfileFragment())
         }
     }
 
-    private fun loadFragment(fragment: androidx.fragment.app.Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fcv, fragment)
-            .commit()
+    private fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.commit {
+            replace(R.id.fcv, fragment)
+        }
     }
-
 
     private fun navigateToLoginActivity() {
         Intent(this, RegistrationActivity::class.java).also {
