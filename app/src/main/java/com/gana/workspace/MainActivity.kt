@@ -8,7 +8,12 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import com.gana.workspace.databinding.ActivityMainBinding
+import com.gana.workspace.view.fragments.HomeFragment
+import com.gana.workspace.view.fragments.ShopsFragment
+import com.gana.workspace.view.fragments.LikesFragment
+import com.gana.workspace.view.fragments.ProfileFragment
 import com.gana.workspace.view.java.RegistrationActivity
+import org.apache.commons.text.StringSubstitutor.replace
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,15 +24,34 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        initViews()
         setupEdgeToEdge()
+        initViews()
+        if (savedInstanceState == null) {
+            loadFragment(HomeFragment())
+        }
     }
 
     private fun initViews() {
-        binding.button.setOnClickListener {
-            navigateToLoginActivity()
+        binding.home.setOnClickListener {
+            loadFragment(HomeFragment())
+        }
+        binding.shops.setOnClickListener {
+            loadFragment(ShopsFragment())
+        }
+        binding.likes.setOnClickListener {
+            loadFragment(LikesFragment())
+        }
+        binding.profile.setOnClickListener {
+            loadFragment(ProfileFragment())
         }
     }
+
+    private fun loadFragment(fragment: androidx.fragment.app.Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fcv, fragment)
+            .commit()
+    }
+
 
     private fun navigateToLoginActivity() {
         Intent(this, RegistrationActivity::class.java).also {

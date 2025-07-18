@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -31,6 +32,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private Button button4;
     private FirebaseAuth mAuth;
     private CircularProgressIndicator progressBar;
+    private TextView textView6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +78,15 @@ public class RegistrationActivity extends AppCompatActivity {
                         });
             }
         });
+        textView6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+                setIntent(intent);
+            }
+        });
+
+
     }
 
 
@@ -84,6 +95,7 @@ public class RegistrationActivity extends AppCompatActivity {
         inputUsername = binding.inputUsername;
         inputPassword = binding.inputPassword;
         button4 = binding.button4;
+        textView6=  binding.textView6;
         progressBar = binding.progressBar;
         mAuth = FirebaseAuth.getInstance();
     }
