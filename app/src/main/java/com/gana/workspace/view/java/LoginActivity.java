@@ -47,9 +47,14 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            Toast.makeText(LoginActivity.this, "login successfull.", Toast.LENGTH_SHORT).show();
+            reload();
         }
     }
+
+    private void reload() {
+
+    }
+
     private void onclickListener() {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -36,7 +36,7 @@ android {
     }
     dataBinding{
         //noinspection DataBindingWithoutKapt
-        enabled = true
+        enable = true
     }
 }
 ext {

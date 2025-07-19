@@ -24,7 +24,13 @@ class LoginActivityV2 : AppCompatActivity() {
         initUi()
         onClickEvents()
     }
-
+    public override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            updateUi(currentUser)
+        }
+    }
     private fun initUi(){
         auth = Firebase.auth
     }
