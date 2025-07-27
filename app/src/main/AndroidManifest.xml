@@ -13,6 +13,10 @@
         android:theme="@style/Theme.Workspace"
         tools:targetApi="31">
         <activity
+            android:name=".proposal.WelcomeActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".view.java.RegistrationActivity"
             android:exported="false" />
         <activity

@@ -2,6 +2,7 @@ package com.gana.workspace.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.gana.workspace.MainActivity
@@ -33,6 +34,11 @@ class RegisterActivityV2 : AppCompatActivity(){
 
     private fun initUi(){
         auth = Firebase.auth
+        activityRegistrationBinding?.textView6?.setOnClickListener(View.OnClickListener {
+            Intent(this,LoginActivityV2::class.java).also{
+            startActivity(it)
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+        } })
     }
 
     override fun onStart() {

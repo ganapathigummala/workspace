@@ -3,21 +3,25 @@ package com.gana.workspace.view
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.gana.workspace.MainActivity
 import com.gana.workspace.R
 import com.gana.workspace.databinding.ActivityLoginBinding
+import com.gana.workspace.proposal.WelcomeActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import org.apache.commons.lang3.ObjectUtils.isNotEmpty
+import org.checkerframework.checker.units.qual.Length
 
 class LoginActivityV2 : AppCompatActivity() {
     lateinit var activityLoginBinding: ActivityLoginBinding
     lateinit var auth: FirebaseAuth
+    lateinit var userName : String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login)
@@ -76,13 +80,22 @@ class LoginActivityV2 : AppCompatActivity() {
             }
     }
 
-    private fun updateUi(user: FirebaseUser?){
-        Snackbar
-            .make(activityLoginBinding.root,"Successfully created",Snackbar.LENGTH_SHORT)
-            .show();
-        Intent(this, MainActivity::class.java).also{
-            startActivity(it)
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+    private fun updateUi(user: FirebaseUser?) {
+//        Snackbar.make(activityLoginBinding.root, "Successfully created", Snackbar.LENGTH_SHORT).show()
+
+        if (user?.email == "gana@test.com") {
+            Intent(this, WelcomeActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            }
+        } else {
+            Toast.makeText(baseContext, "Successfully Login", Toast.LENGTH_LONG).show()
+
+            Intent(this, MainActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            }
         }
     }
+
 }
