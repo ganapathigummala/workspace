@@ -1,3 +1,5 @@
+package com.gana.workspace.view.adapter
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -5,11 +7,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.gana.workspace.R
 import com.gana.workspace.databinding.HomeRvCardBinding
-import com.gana.workspace.view.fragments.HomeFragment
+import com.gana.workspace.view.model.HomeModel
 
-class FragmentAdapter(homeFragment: Context, homeFragment1: HomeFragment) : RecyclerView.Adapter<FragmentAdapter.Holder>() {
-
-    private val itemList = listOf("Item 1", "Item 2", "Item 3")
+class FragmentAdapter(
+    private val context: Context,
+    private var aiModels: List<HomeModel>,
+    private val listener: Listenre
+) : RecyclerView.Adapter<FragmentAdapter.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val inflater = LayoutInflater.from(parent.context)
@@ -23,15 +27,24 @@ class FragmentAdapter(homeFragment: Context, homeFragment1: HomeFragment) : Recy
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        val item = itemList[position]
-        holder.binding.sometxt.text = item
+        val item = aiModels[position]
+        holder.binding.sometxt.text = item.name
+
+        holder.binding.root.setOnClickListener {
+            listener.onItemClick(item)
+        }
     }
 
-    override fun getItemCount(): Int = itemList.size
+    override fun getItemCount(): Int = aiModels.size
+
+    fun updateList(newList: List<HomeModel>) {
+        aiModels = newList
+        notifyDataSetChanged()
+    }
 
     class Holder(val binding: HomeRvCardBinding) : RecyclerView.ViewHolder(binding.root)
+}
 
-    interface Listener{
-        fun onclick()
-    }
+interface Listenre {
+    fun onItemClick(model: HomeModel)
 }

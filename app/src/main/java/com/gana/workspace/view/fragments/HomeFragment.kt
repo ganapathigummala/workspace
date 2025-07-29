@@ -1,28 +1,29 @@
 package com.gana.workspace.view.fragments
 
-import FragmentAdapter
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.gana.workspace.R
 import com.gana.workspace.databinding.HomefragmentBinding
+import com.gana.workspace.view.adapter.FragmentAdapter
+import com.gana.workspace.view.adapter.Listenre
+import com.gana.workspace.view.model.HomeModel
+import com.gana.workspace.view.viewmodel.HomeViewModel
 
-class HomeFragment : Fragment() , FragmentAdapter.Listener{
+class HomeFragment : Fragment(), Listenre {
 
-    lateinit var adapter: FragmentAdapter
-    lateinit var homeRv: RecyclerView
-     var _binding: HomefragmentBinding? = null
+    private var _binding: HomefragmentBinding? = null
     private val binding get() = _binding!!
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
-
+    private lateinit var adapter: FragmentAdapter
+    private lateinit var viewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,57 +35,30 @@ class HomeFragment : Fragment() , FragmentAdapter.Listener{
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupUI(view)
-        observeViewModel()    }
-
-    override fun onStart() {
-        super.onStart()
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        setupRecyclerView()
+        observeViewModel()
     }
 
-    override fun onResume() {
-        super.onResume()
+    private fun setupRecyclerView() {
+        adapter = FragmentAdapter(requireContext(), emptyList(), this)
+        binding.homeRv.layoutManager = LinearLayoutManager(requireContext())
+        binding.homeRv.adapter = adapter
     }
 
-    override fun onPause() {
-        super.onPause()
-    }
-
-    override fun onStop() {
-        super.onStop()
-    }
-
-    // Called to clean up resources
-    override fun onDestroyView() {
-        super.onDestroyView()
-        // Cleanup references to views to avoid memory leaks
-    }
-
-    // Called when the fragment is no longer in use
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
-    // Called when the fragment is detached from its activity
-    override fun onDetach() {
-        super.onDetach()
-    }
-    private fun setupUI(view: View) {
-        homeRv = binding.homeRv
-        homeRv.apply {
-            layoutManager = LinearLayoutManager(activity)
-            adapter = FragmentAdapter(requireContext(), this@HomeFragment)
+    private fun observeViewModel() {
+        viewModel.homeModels.observe(viewLifecycleOwner) { models ->
+            adapter.updateList(models)
         }
     }
 
-
-
-    private fun observeViewModel() {
-        // Connect to your ViewModel's LiveData or StateFlow
+    override fun onItemClick(model: HomeModel) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(model.url))
+        startActivity(intent)
     }
 
-    override fun onclick() {
-        TODO("Not yet implemented")
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
-
-
 }
